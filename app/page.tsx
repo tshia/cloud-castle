@@ -1,113 +1,182 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <ul>
+        <li><Link className="home-link home" href="/">Cloud Castle</Link></li>
+        <li><Link className="product-link" href="/products">Products</Link></li>
+        <li><Link className="about-link" href="/about">About</Link></li>
+        <li><Link className="contact-link" href="/contact">Contact Us</Link></li>
+        <li><Link className="login-link" href="/login">Login</Link></li>
+      </ul>
+
+      <div className="welcome">
+        <div className="message">
+          <p className="heading text-5xl font-bold">Welcome to our web hosting service</p>
+          <p className="heading p-2">Join our hosting family today and experience the power of seamless performance, top-notch security, and unbeatable affordability. Explore how our services can benefit you</p>
+          <button className="btn-plan">See Plans</button>
+        </div>
+        <div id="img"><Image src="/pcs.jpg" width={600} height={500} alt="desk with laptops"/></div>
+      </div>
+      
+
+      <div className="packages">
+
+        <div className='content-creator'>
+          <p className="text-2xl p-1">Content Creators</p>
+          <span className="text-2xl p-1 font-bold">R150</span><span className="month font-bold">/per month</span>
+          <p>20GB SSD Storage</p>
+          <p>100 Email Accounts</p>
+          <p>Host 2 Domains</p>
+          <p>50 Subdomains</p>
+          <p>Unlimited Web Traffic</p>
+          <p>5 MySQL Databases</p>
+          <p>1GB RAM</p>
+          <p>Free Setup</p>
+          <p>25/7 Support Service</p>
+          <p>Secure Security</p>
+          <button className='btn-option'>Get Started</button>
+        </div>
+        
+        <div className='small-medium'>
+          <p className="text-2xl p-1">Small Medium Business</p>
+          <span className="text-2xl p-1 font-bold">R200</span><span className="month font-bold">/per month</span>
+          <p>40GB SSD Storage</p>
+          <p>500 Email Accounts</p>
+          <p>Host 5 Domains</p>
+          <p>100 Subdomains</p>
+          <p>Unlimited Web Traffic</p>
+          <p>50 MySQL Databases</p>
+          <p>1GB RAM</p>
+          <p>Free Setup</p>
+          <p>25/7 Support Service</p>
+          <p>Secure Security</p>
+          <button className='btn-option'>Get Started</button>
+        </div>
+
+        <div className='web-developer'>
+          <p className="text-2xl p-1">Web Developers</p>
+          <span className="text-2xl p-1 font-bold">R300</span><span className="month font-bold">/per month</span>
+          <p>100GB SSD Storage</p>
+          <p>Unlimited Email Accounts</p>
+          <p>Host 10 Domains</p>
+          <p>500 Sub Domains</p>
+          <p>Unlimited Web Traffic</p>
+          <p>Unlimited MySQL Databases</p>
+          <p>2GB RAM</p>
+          <p>Free Setup</p>
+          <p>25/7 Support Service</p>
+          <p>Secure Security</p>
+          <button className='btn-option'>Get Started</button>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className='features'>
+        <div id='storage'>
+          <Image className='image' src='/hardisk.png' width={80} height={80} alt='storage'/>
+          <p className='text font-bold p-2'>SSD Storage</p>
+          <p className='describe'>Website storage gives you convenience on a place to store your information including cookies</p>
+        </div>
+        <div id='email'>
+          <Image className='image' src='/mail.png' width={80} height={80} alt='email'/>
+          <p className='text font-bold p-2'>Email Configuration</p>
+          <p className='describe'>Provides administration for all the email accounts you can create to manage your business</p>
+        </div>
+        <div id='domain'>
+          <Image className='image' src='/browser_1311780.png' width={80} height={80} alt='domain'/>
+          <p className='text font-bold p-2'>Domain Registration</p>
+          <p className='describe'>Takes care of domains you create and register to the website, which include .co.za, .com, .africa etc.</p>
+        </div>
+        <div id='database'>
+          <Image className='image' src='/database_2609224.png' width={80} height={80} alt='database'/>
+          <p className='text font-bold p-2'>Database Storage</p>
+          <p className='describe'>Enables you to create database schemas, store information including documents and downloads</p>
+        </div>
+        <div id='security'>
+          <Image className='image' src='/security.png' width={80} height={80} alt='security'/>
+          <p className='text font-bold p-2'>Secure Security</p>
+          <p className='describe'>With our team we protect the client and customer information to guarantee safety browsing</p>
+        </div>
+        <div id='support'>
+          <Image className='image' src='/customer.png' width={80} height={80} alt='customer'/>
+          <p className='text font-bold p-2'>Customer Support</p>
+          <p className='describe'>Provides 25/7 customer support which includes customer enquiries, resources provision and technical support </p>
+        </div>
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className='faq-section'>
+        <div className='faqs text-3xl text-center font-bold'>Frequently Asked Questions</div>
+        <div className='q1'>
+          <button className='btn-faq'>1. What is Web Hosting?</button>
+          <p className='p2'>Web Hosting is an internet service that allows for your website to be accessible by the public.</p>
+        </div>
+        <div className='q2'>
+          <button className='btn-faq'>2. What kind of web hosting do I need?</button>
+          <p className='p2'>The type of web hosting you need depends on what you want to do with your site, whether you are running a small business or for content creation.</p>
+        </div>
+        <div className='q3'>
+          <button className='btn-faq'>3. Can I host multiple domain names with my hosting account?</button>
+          <p className='p2'>Our Business Web Hosting plan allows you to host multiple websites. You can also use these plans to set up various names for your site and direct visitors to specific pages.</p>
+        </div>
+        <div className='q4'>
+          <button className='btn-faq'>4. I purchased a hosting package. What now?</button>
+          <p className='p2'>You will receive a welcome e-mail with your login credentials. You can also access your account information through the client login here on our site.</p>
+        </div>
+        <div className='q5'>
+          <button className='btn-faq'>5. Who will have the domain ownership if I register a domain name with you?</button>
+          <p className='p2'>When you register a domain name with us, you will have full ownership of your domain name.</p>
+        </div>
+        <div className='q6'>
+          <button className='btn-faq'>6. How do I upgrade my web hosting package?</button>
+          <p className='p2'>If you need more storage, data transfer capability, or multiple file transfer accounts, log into your account and choose the hosting package to which you would like to upgrade.</p>
+        </div>
+        <div className='q7'>
+          <button className='btn-faq'>7. If I already have a website, can I transfer it to your web hossting?</button>
+          <p className='p2'>Relocating your website to Cloud Castle is a simple process. Our support team can help you with this transition should you have any questions or if you encounter any difficulties.</p>
+        </div>
       </div>
+
+      <div className='footer'>
+        <div className='foot-logo'>
+          <div className='text-3xl'>Cloud Castle</div>
+          <p>Simplify Your Connection</p>
+          <div className='socials'>
+            <Image className="inline p-1" src='/fbgold.png' width={30} height={30} alt='facebook'/>
+            <Image className="inline p-1" src='/iggold.png' width={30} height={30} alt='instagram'/>
+            <Image className="inline p-1" src='/ingold.png' width={30} height={30} alt='linkedin'/>
+            <Image className="inline p-1" src='/whatsappg.png' width={30} height={30} alt='whatsapp'/>
+          </div>
+        </div>
+        
+        <div className="extras">
+          <div className='extra-1'>
+            <p className='font-bold'>PRODUCTS</p>
+            <p>Hosting Pricing Packages</p>
+            <p>Add-Ons Features</p>
+            <p>Business Service Pricing</p>
+          </div>
+          <div className='extra-2'>
+            <div className='font-bold'>ABOUT</div>
+            <div className='font-bold'>CONTACT US</div>
+            <div className='font-bold'>HELP</div>
+            <div className='font-bold'>FAQs</div>
+            <div className='font-bold'>RESOURCES</div>
+          </div>
+          
+        </div>
+
+        <hr></hr>
+
+        <div className='copyright-stuff text-center p-1'>
+          <div>Copyright &copy; - cloudcastle.africa - All Rights Reserved </div>
+          <span>Terms of service</span><span>Privacy Policy</span>
+        </div>
+        
+      </div> 
+      
     </main>
   )
 }

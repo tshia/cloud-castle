@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Tera:wght@100;300;600&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -10,18 +11,140 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+    --foreground-rgb:0, 0, 0;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: #ffe900;
+  padding: 0 2rem;
+}
+
+li {
+  float: left;
+}
+
+.home-link, .about-link, .product-link, .login-link, .contact-link {
+  display: block;
+  padding: 8px;
+}
+
+.home, .home-link:hover {
+  font-weight: 1000;
+}
+
+.active, .about-link:hover, .product-link:hover, .login-link:hover, .contact-link:hover {
+  background-color: #ffc700 ;
+}
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  padding: 1rem 0;
+  box-sizing: border-box;
+}
+
+.welcome {
+  padding: 4rem;
+  column-count: 2;
+  margin: 4rem 0;
+  vertical-align: middle;
+}
+
+.message {
+  padding: 5rem 0;
+}
+
+.packages {
+  column-count: 3;
+  padding: 0 1rem;
+}
+.content-creator, .small-medium, .web-developer {
+  border: 1px solid silver;
+  border-radius: 20px;
+  padding: 1rem 0;
+  margin: 0 1rem;
+  text-align: center;
+}
+
+.month { 
+  display: inline-block;
+}
+
+span {
+  padding: 10px 0;
+}
+
+.btn-plan, .btn-option {
+  background-color: #ffe900;
+  padding: 15px 32px;
+  margin: 10px 0;
+}
+
+/* #img {
+  position: relative;
+} */
+
+.footer {
+  padding: 2rem;
+  background-color:silver;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.extras{
+  column-count: 2;
+  padding: 2rem 0;
+}
+
+.extra-1, .extra-2 {
+  width: 50%;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.foot-logo{
+  text-align: center;
+}
+
+.socials {
+  position: relative;
+}
+
+.features {
+  column-count: 3;
+  padding: 2rem;
+}
+
+#storage, #email, #domain, #database, #security, #support {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* .describe {
+  text-align:justify;
+} */
+
+.faq-section {
+  padding: 2rem;
+  margin: 0 10rem;
+  width: 75%;
+}
+
+.btn-faq {
+  border-bottom: 1px solid silver;
+  width: 100%;
+  padding: 1rem;
+  text-align: left;
+}
+
+.p2 {
+  display:none;
+  overflow: hidden;
 }
