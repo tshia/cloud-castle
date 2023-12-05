@@ -17,7 +17,7 @@
   }
 }
 
-ul {
+.navbar {
   list-style-type: none;
   margin: 0;
   overflow: hidden;
@@ -25,13 +25,10 @@ ul {
   padding: 0 2rem;
 }
 
-li {
-  float: left;
-}
-
 .home-link, .about-link, .product-link, .login-link, .contact-link {
   display: block;
   padding: 8px;
+  float: left;
 }
 
 .home, .home-link:hover {
@@ -39,7 +36,7 @@ li {
 }
 
 .active, .about-link:hover, .product-link:hover, .login-link:hover, .contact-link:hover {
-  background-color: #ffc700 ;
+  background-color: silver ;
 }
 body {
   color: rgb(var(--foreground-rgb));
@@ -48,26 +45,150 @@ body {
 }
 
 .welcome {
+  position: relative;
   padding: 4rem;
-  column-count: 2;
+  display: flex;
+  flex-direction: column;
   margin: 4rem 0;
-  vertical-align: middle;
 }
 
 .message {
+  position: relative;
+  text-align: center;
+}
+
+.img {
+  opacity: 0.3;
+}
+
+.img-2 {
+  height: 100%;
+}
+
+.login {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+input, textarea {
+  border: silver solid 1px;
+  margin: 5px;
+  padding: 1rem;
+}
+
+.new:hover, .resetpwd:hover{
+  text-decoration: underline;
+}
+
+.cred {
+  display: inline-block;
+  margin: 2rem;
+  padding: 4rem;
+}
+
+.lbl {
+  text-align: right;
+}
+.btn-login{
+  width: 100%;
+}
+
+.btn-cred, .forgot-sign {
+  text-align: center;
+  margin: 5px;
+}
+
+.btn-plan {
+  background-color: #ffc700;
+  padding: 15px 32px;
+  margin: 10px 0;
+}
+
+#send{
+  padding: 0 5px;
+}
+
+#submit {
+  padding: 5px;
+}
+
+.contact {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.contact-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-section {
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.contact-image {
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.contact-details, .contact-submit {
+  width: 330px;
+  height: 420px;
+  padding: 1rem;
+}
+
+.contact-details {
   padding: 5rem 0;
 }
 
+.contact-submit{
+  padding: 2rem;
+  background-color: white;
+  border-color: silver;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+.contact-whatsapp, .contact-email {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+}
+textarea {
+  width: 96%;
+}
+
+.signup-form{
+  text-align: center;
+  margin: 2rem;
+}
+
 .packages {
-  column-count: 3;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   padding: 0 1rem;
 }
-.content-creator, .small-medium, .web-developer {
+
+@media (max-width: 1280px) {
+  .packages{
+    flex-wrap: wrap;
+  }
+}
+
+.card {
   border: 1px solid silver;
   border-radius: 20px;
-  padding: 1rem 0;
-  margin: 0 1rem;
+  padding: 1rem;
+  margin: 1rem;
   text-align: center;
+  width: 250px;
+  height: 460px;
 }
 
 .month { 
@@ -78,21 +199,79 @@ span {
   padding: 10px 0;
 }
 
-.btn-plan, .btn-option {
+.btn-option, .btn-login, .btn-send, .btn-submit{
   background-color: #ffe900;
   padding: 15px 32px;
-  margin: 10px 0;
+  margin-top: auto;
 }
 
-/* #img {
-  position: relative;
-} */
+.domain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: center;
+  width: 100%;
+  height: 70vh;
+}
+
+.business {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: center;
+  background-color: cadetblue;
+}
+
+table, thead, th, td, tr, tbody {
+  border: 1px solid cadetblue;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+table {
+  width: 500px;
+  background-color:burlywood;
+}
+
+.start-up, .growth, .executive {
+  border: none;
+  text-align: center;
+  column-count: 1;
+}
+
+.t-features {
+  text-align: left;
+  padding: 2rem;
+}
+
+.business-desc {
+  padding: 2rem;
+}
+
+#about {
+  display: flex;
+  margin: 2rem;
+  text-align: center;
+  justify-items: space-around;
+  padding: 0 15rem;
+}
+
+@media (max-width: 850px) {
+  .about{
+    padding: 1rem;
+  }
+}
+
+.paragraph {
+  margin-bottom: 30px;
+}
 
 .footer {
   padding: 2rem;
   background-color:silver;
   width: 100%;
-  margin-top: 2rem;
 }
 
 .extras{
@@ -126,10 +305,6 @@ span {
   align-items: center;
   padding: 2rem;
 }
-
-/* .describe {
-  text-align:justify;
-} */
 
 .faq-section {
   padding: 2rem;

@@ -1,37 +1,43 @@
-import React from "react"
-import Link from "next/link"
-import Image from "next/image"
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 
-export default function LoginPage(){
+export default function NewUser(){
     return(
         <div>
             <div>
                 <ul className='navbar'>
                     <li><Link className="home-link" href="/">Cloud Castle</Link></li>
                     <li><Link className="contact-link" href="/contact">Contact Us</Link></li>
-                    <li><Link className="login-link active" href="/login">Login</Link></li>
+                    <li><Link className="login-link" href="/login">Login</Link></li>
                 </ul>
             </div>
-            
-            <div className='login'>
-                <div className='img-2'><Image src="/pcs.jpg" height={700} width={700} alt="desk with laptops"/></div>
-                <div className="cred">
-                    <div className='lbl'>
-                        <label form="username" >Username:</label>
-                        <input type="text" className='username'/>
-                    </div>
-                    <div className='lbl'>
-                        <label form='password' >Password:</label>
-                        <input type='password' className="pwd"/>
-                    </div>
-                    <div className="btn-cred">
-                        <button className='btn-login'>Log In</button>
-                    </div>
-                    <div className="forgot-sign">
-                        <span><Link href='/passwordreset' className="resetpwd p-2">Forgot Password</Link></span>
-                        <span><Link href='/newuser' className="new-user p-2">Sign Up</Link> </span>
-                    </div>
-                    
+
+            <div className="signup-form">
+
+                <div className='signup-header font-bold text-3xl p-2'>Sign Up</div>
+
+                <div>
+                    <input type="text" className='name' placeholder="First name"/> 
+                </div>
+                <div>
+                    <input type="text" className='surname' placeholder="Surname"/> 
+                </div>
+                <div>
+                    <input type="text" className='username' placeholder="Username"/> 
+                </div>
+                <div>
+                    <input type='email' className="email" placeholder="Email"/> 
+                </div>
+                <div>
+                    <input type="password" className='password' placeholder="Password"/> 
+                </div>
+                <div>
+                    <input type="password" className='confirm' placeholder="Confirm password"/> 
+                </div>
+
+                <div id='submit'>
+                    <button className='btn-submit'>Submit</button>
                 </div>
             </div>
 
@@ -74,4 +80,4 @@ export default function LoginPage(){
             </div>
         </div>
     )
-}
+};

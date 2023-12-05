@@ -1,31 +1,30 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import React, { useState } from 'react'
+
 
 export default function Home() {
   return (
     <main>
-      <ul>
+      <ul className='navbar'>
         <li><Link className="home-link home" href="/">Cloud Castle</Link></li>
-        <li><Link className="product-link" href="/products">Products</Link></li>
-        <li><Link className="about-link" href="/about">About</Link></li>
+        <li><Link className="about-link" href="#about">About</Link></li>
         <li><Link className="contact-link" href="/contact">Contact Us</Link></li>
         <li><Link className="login-link" href="/login">Login</Link></li>
       </ul>
 
       <div className="welcome">
+        <div className="img"><Image src="/pcs.jpg" layout='fill' objectFit='cover' quality={100} alt="desk with laptops"/></div>
         <div className="message">
           <p className="heading text-5xl font-bold">Welcome to our web hosting service</p>
-          <p className="heading p-2">Join our hosting family today and experience the power of seamless performance, top-notch security, and unbeatable affordability. Explore how our services can benefit you</p>
+          <p className="heading p-2 text-2xl">Join our hosting family today and experience the power of seamless performance, top-notch security, and unbeatable affordability. Explore how our services can benefit you.</p>
           <button className="btn-plan">See Plans</button>
         </div>
-        <div id="img"><Image src="/pcs.jpg" width={600} height={500} alt="desk with laptops"/></div>
       </div>
       
-
       <div className="packages">
 
-        <div className='content-creator'>
+        <div className='card'>
           <p className="text-2xl p-1">Content Creators</p>
           <span className="text-2xl p-1 font-bold">R150</span><span className="month font-bold">/per month</span>
           <p>20GB SSD Storage</p>
@@ -41,7 +40,7 @@ export default function Home() {
           <button className='btn-option'>Get Started</button>
         </div>
         
-        <div className='small-medium'>
+        <div className='card'>
           <p className="text-2xl p-1">Small Medium Business</p>
           <span className="text-2xl p-1 font-bold">R200</span><span className="month font-bold">/per month</span>
           <p>40GB SSD Storage</p>
@@ -57,7 +56,7 @@ export default function Home() {
           <button className='btn-option'>Get Started</button>
         </div>
 
-        <div className='web-developer'>
+        <div className='card'>
           <p className="text-2xl p-1">Web Developers</p>
           <span className="text-2xl p-1 font-bold">R300</span><span className="month font-bold">/per month</span>
           <p>100GB SSD Storage</p>
@@ -71,6 +70,109 @@ export default function Home() {
           <p>25/7 Support Service</p>
           <p>Secure Security</p>
           <button className='btn-option'>Get Started</button>
+        </div>
+      
+        <div className='card'>
+          <p className="text-2xl p-1">Add-Ons 1</p>
+          <span className="text-2xl p-1 font-bold">R180</span><span className="month font-bold">/per month</span>
+          <p>1x SSL Certificate</p>
+          <p>IP Addresses</p>
+          <p>1x  Website Builder </p>
+          <p>Backup Services</p>
+          <p>Site security Audits</p>
+          <p>SEO Optimization</p>
+          <button className='btn-option'>Add On</button>
+        </div>
+
+        <div className='card'>
+          <p className="text-2xl p-1">Add-Ons 2</p>
+          <span className="text-2xl p-1 font-bold">R360</span><span className="month font-bold">/per month</span>
+          <p>2x SSL Certificate</p>
+          <p>2x IP Addresses</p>
+          <p>3x  Website Builder </p>
+          <p>Backup Services</p>
+          <p>Site security Audits</p>
+          <p>SEO Optimization</p>
+          <p>Website Analytics</p>
+          <button className='btn-option'>Add On</button>
+        </div>
+      </div>
+
+      <div className="domain">
+        <div>
+          <p  className='register font-bold text-2xl'>DOMAIN REGISTRATION</p>
+          <span className='text-2xl'>Create a unique identity on the internet by finding and registering a unique domain for your business with just a few simple steps.</span>
+          <div><button className='btn-option'>Register</button></div>
+        </div>
+        <div className='img-2'><Image src='/corporate lady.jpg' width={900} height={700} alt='workspace'></Image></div>
+        
+      </div>
+
+      <div className='business'>
+        <div>
+          <div className='text-2xl font-bold p-2 text-center'>BUSINESS SERVICE PRICING</div>
+          <table className='table-auto'>
+            <thead>
+              <tr>
+                <th>Company Profile</th>
+                <th>Business Plan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th className='start-up' colSpan={2}>Start-Up</th>
+              </tr>
+              <tr>
+                <td>R1000</td>
+                <td>R1000</td>
+              </tr>
+              <tr>
+                <th className='growth'colSpan={2}>Growth</th>
+              </tr>
+              <tr>
+                <td>R1300</td>
+                <td>R1500</td>
+              </tr>
+              <tr>
+                <th className='executive' colSpan={2}>Executive</th>
+              </tr>
+              <tr>
+                <td>R2000</td>
+                <td>R2500</td>
+              </tr>
+              <tr>
+                <td className='t-features'>
+                  <ul className='features-list'>
+                    <li>Logo</li>
+                    <li>Slogan</li>
+                    <li>Letterhead</li>
+                    <li>Business Card Design</li>
+                    <li>Welcome Board Design</li>
+                    <li>Company Registration</li>
+                  </ul>
+                </td>
+                <td className='t-features'>
+                  <ul className='features-list'>
+                      <li>Logo</li>
+                      <li>Slogan</li>
+                      <li>Letterhead</li>
+                      <li>Business Card Design</li>
+                      <li>Welcome Board Design</li>
+                      <li>Company Registration</li>
+                      <li>Business Plan Writing</li>
+                      <li>Proposal</li>
+                    </ul>
+                  
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className='business-desc'>
+          <div>
+            <p className='text-2xl'>Offering entrepreneurs with their small business an opportunity to draw up their business plan that include all the features listed to start their business.</p>
+          </div>
+          <div><button className='btn-option'>More</button></div>
         </div>
       </div>
 
@@ -107,35 +209,18 @@ export default function Home() {
         </div>
       </div>
 
+      <div id='about'>
+        <div>
+          <div className='abt text-3xl text-center font-bold p-1'>About Cloud Castle</div>
+          <p className='paragraph'>The digital world is growing faster than we expected. Some have joined it through a network full of possibilities while others ares still left out as they do not know where and how to start.</p>
+          <p className='paragraph'>We at Cloud Castle are available to provide that bridge to cross the digital world. We believe everyone shouldn not be left behind just because they do not know how.</p>
+          <p className='paragraph'>We are on a mission to connect African businesses for faster networking, to build and have strong African business power for future generations.</p>
+        </div>
+      </div>
       <div className='faq-section'>
         <div className='faqs text-3xl text-center font-bold'>Frequently Asked Questions</div>
-        <div className='q1'>
-          <button className='btn-faq'>1. What is Web Hosting?</button>
-          <p className='p2'>Web Hosting is an internet service that allows for your website to be accessible by the public.</p>
-        </div>
-        <div className='q2'>
-          <button className='btn-faq'>2. What kind of web hosting do I need?</button>
-          <p className='p2'>The type of web hosting you need depends on what you want to do with your site, whether you are running a small business or for content creation.</p>
-        </div>
-        <div className='q3'>
-          <button className='btn-faq'>3. Can I host multiple domain names with my hosting account?</button>
-          <p className='p2'>Our Business Web Hosting plan allows you to host multiple websites. You can also use these plans to set up various names for your site and direct visitors to specific pages.</p>
-        </div>
-        <div className='q4'>
-          <button className='btn-faq'>4. I purchased a hosting package. What now?</button>
-          <p className='p2'>You will receive a welcome e-mail with your login credentials. You can also access your account information through the client login here on our site.</p>
-        </div>
-        <div className='q5'>
-          <button className='btn-faq'>5. Who will have the domain ownership if I register a domain name with you?</button>
-          <p className='p2'>When you register a domain name with us, you will have full ownership of your domain name.</p>
-        </div>
-        <div className='q6'>
-          <button className='btn-faq'>6. How do I upgrade my web hosting package?</button>
-          <p className='p2'>If you need more storage, data transfer capability, or multiple file transfer accounts, log into your account and choose the hosting package to which you would like to upgrade.</p>
-        </div>
-        <div className='q7'>
-          <button className='btn-faq'>7. If I already have a website, can I transfer it to your web hossting?</button>
-          <p className='p2'>Relocating your website to Cloud Castle is a simple process. Our support team can help you with this transition should you have any questions or if you encounter any difficulties.</p>
+        <div className='accordion'>
+          
         </div>
       </div>
 
@@ -144,10 +229,10 @@ export default function Home() {
           <div className='text-3xl'>Cloud Castle</div>
           <p>Simplify Your Connection</p>
           <div className='socials'>
-            <Image className="inline p-1" src='/fbgold.png' width={30} height={30} alt='facebook'/>
-            <Image className="inline p-1" src='/iggold.png' width={30} height={30} alt='instagram'/>
-            <Image className="inline p-1" src='/ingold.png' width={30} height={30} alt='linkedin'/>
-            <Image className="inline p-1" src='/whatsappg.png' width={30} height={30} alt='whatsapp'/>
+            <Image className="inline p-1" src='/fbgold.png' width={40} height={40} alt='facebook'/>
+            <Image className="inline p-1" src='/iggold.png' width={40} height={40} alt='instagram'/>
+            <Image className="inline p-1" src='/ingold.png' width={40} height={40} alt='linkedin'/>
+            <Image className="inline p-1" src='/whatsappg.png' width={40} height={40} alt='whatsapp'/>
           </div>
         </div>
         
@@ -172,7 +257,7 @@ export default function Home() {
 
         <div className='copyright-stuff text-center p-1'>
           <div>Copyright &copy; - cloudcastle.africa - All Rights Reserved </div>
-          <span>Terms of service</span><span>Privacy Policy</span>
+          <Link className='p-1' href='/terms'>Terms of service</Link><Link className='p-1' href='privacy'>Privacy Policy</Link>
         </div>
         
       </div> 
