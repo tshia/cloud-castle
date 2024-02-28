@@ -1,9 +1,14 @@
+"use client";
+
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import { DataAccordion, Data} from './dataAccordion'
+import { Accordion } from './Accordion';
 
 
-export default function Home() {
+const Home = ({key, question, answer}: {key: number, question: string, answer: string}) => {
+
   return (
     <main>
       <ul className='navbar'>
@@ -18,98 +23,108 @@ export default function Home() {
         <div className="message">
           <p className="heading text-5xl font-bold">Welcome to our web hosting service</p>
           <p className="heading p-2 text-2xl">Join our hosting family today and experience the power of seamless performance, top-notch security, and unbeatable affordability. Explore how our services can benefit you.</p>
-          <button className="btn-plan">See Plans</button>
+          <button className="btn-plan"><Link href="#packages">See Packages</Link></button>
         </div>
       </div>
-      
-      <div className="packages">
 
+      <div id='packages'><p className='p-2 font-bold text-2xl ml-6'>PACKAGES</p></div>
+      <div className="packages">
+        
         <div className='card'>
-          <p className="text-2xl p-1">Content Creators</p>
-          <span className="text-2xl p-1 font-bold">R150</span><span className="month font-bold">/per month</span>
-          <p>20GB SSD Storage</p>
-          <p>100 Email Accounts</p>
-          <p>Host 2 Domains</p>
-          <p>50 Subdomains</p>
-          <p>Unlimited Web Traffic</p>
-          <p>5 MySQL Databases</p>
-          <p>1GB RAM</p>
-          <p>Free Setup</p>
-          <p>25/7 Support Service</p>
-          <p>Secure Security</p>
-          <button className='btn-option'>Get Started</button>
+          <div className='card-details'>
+            <p className="text-2xl p-1">Content Creators</p>
+            <span className="text-2xl p-1 font-bold">R150</span><span className="month font-bold">/per month</span>
+            <p>20GB SSD Storage</p>
+            <p>100 Email Accounts</p>
+            <p>Host 2 Domains</p>
+            <p>50 Subdomains</p>
+            <p>Unlimited Web Traffic</p>
+            <p>5 MySQL Databases</p>
+            <p>1GB RAM</p>
+            <p>Free Setup</p>
+            <p>25/7 Support Service</p>
+            <p>Secure Security</p>
+          </div>
+          <div className='start'><button className='btn-option'><Link href='/contentCreator'>Get Started</Link></button></div>
         </div>
         
         <div className='card'>
-          <p className="text-2xl p-1">Small Medium Business</p>
-          <span className="text-2xl p-1 font-bold">R200</span><span className="month font-bold">/per month</span>
-          <p>40GB SSD Storage</p>
-          <p>500 Email Accounts</p>
-          <p>Host 5 Domains</p>
-          <p>100 Subdomains</p>
-          <p>Unlimited Web Traffic</p>
-          <p>50 MySQL Databases</p>
-          <p>1GB RAM</p>
-          <p>Free Setup</p>
-          <p>25/7 Support Service</p>
-          <p>Secure Security</p>
-          <button className='btn-option'>Get Started</button>
+          <div className='card-details'>
+            <p className="text-2xl p-1">Small Medium Business</p>
+            <span className="text-2xl p-1 font-bold">R200</span><span className="month font-bold">/per month</span>
+            <p>40GB SSD Storage</p>
+            <p>500 Email Accounts</p>
+            <p>Host 5 Domains</p>
+            <p>100 Subdomains</p>
+            <p>Unlimited Web Traffic</p>
+            <p>50 MySQL Databases</p>
+            <p>1GB RAM</p>
+            <p>Free Setup</p>
+            <p>25/7 Support Service</p>
+            <p>Secure Security</p>
+          </div>
+          <div className='start'><button className='btn-option'><Link href='/smBusiness'>Get Started</Link></button></div>
         </div>
 
         <div className='card'>
-          <p className="text-2xl p-1">Web Developers</p>
-          <span className="text-2xl p-1 font-bold">R300</span><span className="month font-bold">/per month</span>
-          <p>100GB SSD Storage</p>
-          <p>Unlimited Email Accounts</p>
-          <p>Host 10 Domains</p>
-          <p>500 Sub Domains</p>
-          <p>Unlimited Web Traffic</p>
-          <p>Unlimited MySQL Databases</p>
-          <p>2GB RAM</p>
-          <p>Free Setup</p>
-          <p>25/7 Support Service</p>
-          <p>Secure Security</p>
-          <button className='btn-option'>Get Started</button>
+          <div className='card-details'>
+            <p className="text-2xl p-1">Web Developers</p>
+            <span className="text-2xl p-1 font-bold">R300</span><span className="month font-bold">/per month</span>
+            <p>100GB SSD Storage</p>
+            <p>Unlimited Email Accounts</p>
+            <p>Host 10 Domains</p>
+            <p>500 Sub Domains</p>
+            <p>Unlimited Web Traffic</p>
+            <p>Unlimited MySQL Databases</p>
+            <p>2GB RAM</p>
+            <p>Free Setup</p>
+            <p>25/7 Support Service</p>
+            <p>Secure Security</p>
+          </div>
+          <div className='start-1'><button className='btn-option'><Link href='/webDevelopers'>Get Started</Link></button></div>
         </div>
       
-        <div className='card'>
-          <p className="text-2xl p-1">Add-Ons 1</p>
-          <span className="text-2xl p-1 font-bold">R180</span><span className="month font-bold">/per month</span>
-          <p>1x SSL Certificate</p>
-          <p>IP Addresses</p>
-          <p>1x  Website Builder </p>
-          <p>Backup Services</p>
-          <p>Site security Audits</p>
-          <p>SEO Optimization</p>
-          <button className='btn-option'>Add On</button>
-        </div>
+        <div className='add-ons'>
+          <div className="add-on">
+            <p className="text-2xl p-1">Add-Ons 1</p>
+            <span className="text-2xl p-1 font-bold">R180</span><span className="month font-bold">/per month</span>
+            <p>1x SSL Certificate</p>
+            <p>IP Addresses</p>
+            <p>1x  Website Builder </p>
+            <p>Backup Services</p>
+            <p>Site security Audits</p>
+            <p>SEO Optimization</p>
+          </div>
 
-        <div className='card'>
-          <p className="text-2xl p-1">Add-Ons 2</p>
-          <span className="text-2xl p-1 font-bold">R360</span><span className="month font-bold">/per month</span>
-          <p>2x SSL Certificate</p>
-          <p>2x IP Addresses</p>
-          <p>3x  Website Builder </p>
-          <p>Backup Services</p>
-          <p>Site security Audits</p>
-          <p>SEO Optimization</p>
-          <p>Website Analytics</p>
-          <button className='btn-option'>Add On</button>
+          <div className="add-on">
+            <p className="text-2xl p-1">Add-Ons 2</p>
+            <span className="text-2xl p-1 font-bold">R360</span><span className="month font-bold">/per month</span>
+            <p>2x SSL Certificate</p>
+            <p>2x IP Addresses</p>
+            <p>3x  Website Builder </p>
+            <p>Backup Services</p>
+            <p>Site security Audits</p>
+            <p>SEO Optimization</p>
+            <p>Website Analytics</p>
+          </div>
+
+          <div className="package-desc">Subscribe to one of the packages and add-on to them to get more benefits</div>
         </div>
+        
       </div>
 
       <div className="domain">
         <div>
-          <p  className='register font-bold text-2xl'>DOMAIN REGISTRATION</p>
+          <p className='register font-bold text-2xl'>DOMAIN REGISTRATION</p>
           <span className='text-2xl'>Create a unique identity on the internet by finding and registering a unique domain for your business with just a few simple steps.</span>
-          <div><button className='btn-option'>Register</button></div>
+          <div><button className='btn-option'><Link className='reg' href='/registerUser'>Register</Link></button></div>
         </div>
         <div className='img-2'><Image src='/corporate lady.jpg' width={900} height={700} alt='workspace'></Image></div>
         
       </div>
 
       <div className='business'>
-        <div>
+        <div className='business-card'>
           <div className='text-2xl font-bold p-2 text-center'>BUSINESS SERVICE PRICING</div>
           <table className='table-auto'>
             <thead>
@@ -172,7 +187,7 @@ export default function Home() {
           <div>
             <p className='text-2xl'>Offering entrepreneurs with their small business an opportunity to draw up their business plan that include all the features listed to start their business.</p>
           </div>
-          <div><button className='btn-option'>More</button></div>
+          <div><button className='btn-option'><Link href="/moreBusiness">More</Link></button></div>
         </div>
       </div>
 
@@ -217,10 +232,10 @@ export default function Home() {
           <p className='paragraph'>We are on a mission to connect African businesses for faster networking, to build and have strong African business power for future generations.</p>
         </div>
       </div>
-      <div className='faq-section'>
-        <div className='faqs text-3xl text-center font-bold'>Frequently Asked Questions</div>
+      <div className='faq-section' id='faq'>
+        <div className='faqs text-3xl text-center font-bold p-2'>Frequently Asked Questions</div>
         <div className='accordion'>
-          
+           { DataAccordion.map( ({key, question, answer}) => ( <Accordion key={key} question={question} answer={answer}/> ))}
         </div>
       </div>
 
@@ -238,17 +253,17 @@ export default function Home() {
         
         <div className="extras">
           <div className='extra-1'>
-            <p className='font-bold'>PRODUCTS</p>
+            <p><Link className='font-bold' href="#packages">PRODUCTS</Link></p>
             <p>Hosting Pricing Packages</p>
             <p>Add-Ons Features</p>
             <p>Business Service Pricing</p>
           </div>
           <div className='extra-2'>
-            <div className='font-bold'>ABOUT</div>
-            <div className='font-bold'>CONTACT US</div>
-            <div className='font-bold'>HELP</div>
-            <div className='font-bold'>FAQs</div>
-            <div className='font-bold'>RESOURCES</div>
+            <div><Link className='font-bold' href="#about">ABOUT</Link></div>
+            <div><Link className='font-bold' href="/contact">CONTACT US</Link></div>
+            <div><Link className='font-bold' href="">HELP</Link></div>
+            <div><Link className='font-bold' href="#faq">FAQs</Link></div>
+            <div><Link className='font-bold' href="">RESOURCES</Link></div>
           </div>
           
         </div>
@@ -263,5 +278,7 @@ export default function Home() {
       </div> 
       
     </main>
-  )
+  );
 }
+
+export default Home;

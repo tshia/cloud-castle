@@ -77,7 +77,7 @@ input, textarea {
   padding: 1rem;
 }
 
-.new:hover, .resetpwd:hover{
+.new:hover, .resetpwd:hover, .new-user:hover{
   text-decoration: underline;
 }
 
@@ -99,11 +99,19 @@ input, textarea {
   margin: 5px;
 }
 
-.btn-plan {
+.btn-plan, .btn-option, .btn-login, .btn-send, .btn-submit {
   background-color: #ffc700;
   padding: 15px 32px;
   margin: 10px 0;
 }
+
+.start {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: -10%;
+}
+
 
 #send{
   padding: 0 5px;
@@ -111,6 +119,15 @@ input, textarea {
 
 #submit {
   padding: 5px;
+}
+
+.card {
+  box-shadow: -10px 10px 20px silver;
+  background-color:beige;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+  width: 30%;
 }
 
 .contact {
@@ -181,14 +198,20 @@ textarea {
   }
 }
 
-.card {
-  border: 1px solid silver;
-  border-radius: 20px;
+
+
+.add-on {
+  float: left;
   padding: 1rem;
   margin: 1rem;
   text-align: center;
-  width: 250px;
-  height: 460px;
+}
+
+.package-desc {
+  background-color: silver;
+  padding: 3rem 1rem;
+  margin: 0 1rem;
+  display: inline-block;
 }
 
 .month { 
@@ -197,12 +220,6 @@ textarea {
 
 span {
   padding: 10px 0;
-}
-
-.btn-option, .btn-login, .btn-send, .btn-submit{
-  background-color: #ffe900;
-  padding: 15px 32px;
-  margin-top: auto;
 }
 
 .domain {
@@ -233,6 +250,7 @@ table, thead, th, td, tr, tbody {
 table {
   width: 500px;
   background-color:burlywood;
+  box-shadow: -10px 10px 30px darkslategray;
 }
 
 .start-up, .growth, .executive {
@@ -262,6 +280,24 @@ table {
   .about{
     padding: 1rem;
   }
+}
+
+.q-accord{
+  display: inline-block;
+}
+.plus-minus {
+  float: right;
+}
+
+.btn-accordion {
+  background-color: beige;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+  padding: 0.5rem;
+}
+
+.accordion-content {
+  padding: 0.5rem;
 }
 
 .paragraph {
